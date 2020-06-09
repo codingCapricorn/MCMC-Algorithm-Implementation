@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[25]:
-
-
 '''Markov Chain Monte Carlo (MCMC)'''
 
 from __future__ import division
@@ -19,68 +13,14 @@ get_ipython().run_line_magic('matplotlib', 'inline')
 get_ipython().run_line_magic('precision', '4')
 plt.style.use('ggplot')
 
-
-# In[26]:
-
-
 from mpl_toolkits.mplot3d import Axes3D
 import scipy.stats as stats
 from functools import partial
 
-
-# In[27]:
-
-
 np.random.seed(1234)
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-'''
-Bayesian Data Analysis :::::::>>>>>>
-
-The fundamental objective of Bayesian data analysis is to determine the posterior distribution
-
-p(θ | X)=p(X | θ)p(θ)p(X)
-where the denominator is
-
-p(X)=∫dθ∗p(X | θ∗)p(θ∗)
-Here,
-
-p(X | θ) is the likelihood,
-p(θ) is the prior and
-p(X) is a normalizing constant also known as the evidence or marginal likelihood
-
-
--->>We will use the toy example of estimating the bias of a coin given a sample consisting of n tosses to illustrate a few of the approaches.
-
--->>Analytical solution
-If we use a beta distribution as the prior, then the posterior distribution has a closed form solution. 
-This is shown in the example below. Some general points:
-
-We need to choose a prior distribtuiton family (i.e. the beta here) as well as its parameters (here a=10, b=10)
-The prior distribution may be relatively uninformative (i.e. more flat) or inforamtive (i.e. more peaked)
-The posterior depends on both the prior and the data
-As the amount of data becomes large, the posterior approximates the MLE
-An informative prior takes more data to shift than an uninformative one
-Of course, it is also important the model used (i.e. the likelihood) is appropriate for the fitting the data
-The mode of the posterior distribution is known as the maximum a posteriori (MAP) estimate (cf MLE which is the mode of the likelihood)
-
-In Bayesian statistics, we want to estiamte the posterior distribution, 
-but this is often intractable due to the high-dimensional integral in the denominator (marginal likelihood)
-'''
-
-
-# In[28]:
-
-
+#Bayesian Data Analysis 
 
 n = 100
 h = 61
@@ -108,13 +48,7 @@ plt.ylabel('Density', fontsize=16)
 plt.legend();
 
 
-# In[29]:
-
-
-'''
-Numerical integration
-'''
-
+#Numerical integration of Bayesian
 thetas = np.linspace(0, 1, 200)
 prior = st.beta(a, b)
 
@@ -131,17 +65,12 @@ plt.ylabel('Density', fontsize=16)
 plt.legend();
 
 
-# In[ ]:
-
 
 '''
 Markov Chain Monte Carlo Algorithms :::::::>>>>>>
 MCMC methods are used to approximate the posterior distribution of a parameter of interest by random sampling in a probabilistic space.
 With MCMC,i.e.Markov Chain + Monte Carlo Algorithms, 
 we draw samples from a (simple) proposal distribution so that each draw depends only on the state of the previous draw (i.e. the samples form a Markov chain). 
-Under certain condiitons, the Markov chain will have a unique stationary distribution. In addition, not all samples are used - 
-instead we set up acceptance criteria for each draw based on comparing successive states with respect to a target distribution that enusre that the stationary distribution is the posterior distribution of interest. 
-The nice thing is that this target distribution only needs to be proportional to the posterior distribution, which means we don’t need to evaluate the potentially intractable marginal likelihood, which is just a normalizing constant. 
 
 MCMC and it's 3 common veriants - 
 
@@ -152,52 +81,7 @@ MCMC and it's 3 common veriants -
 '''
 
 
-# In[ ]:
-
-
-
-
-
-# In[1]:
-
-
-# <<<--- 1.Metropolis-Hastings sampler --->>>
-
-
-# In[ ]:
-
-
-'''
-To carry out the Metropolis-Hastings algorithm, we need to draw random samples from the folllowing distributions
-
-the standard uniform distribution
-a proposal distriution p(x) that we choose to be N(0,σ)
-the target distribution g(x) which is proportional to the posterior probability
-Given an initial guess for θ with positive probability of being drawn, the Metropolis-Hastings algorithm proceeds as follows
-
-Choose a new proposed value (θp) such that θp=θ+Δθ where Δθ∼N(0,σ)
-
-Caluculate the ratio
-
-ρ=g(θp | X)g(θ | X)
-where g is the posterior probability.
-
-If the proposal distribution is not symmetrical, we need to weight the accceptanc probablity to maintain detailed balance (reversibilty) of the stationary distribution, and insetad calculate
-
-ρ=g(θp | X)p(θ | θp)g(θ | X)p(θp | θ)
-Since we are taking ratios, the denominator cancels any distribution proporational to g will also work - so we can use
-
-ρ=p(X|θp)p(θp)p(X|θ)p(θ)
-If ρ≥1, then set θ=θp
-
-If ρ<1, then set θ=θp with probability ρ, otherwise set θ=θ (this is where we use the standard uniform distribution)
-
-Repeat the earlier steps
-'''
-
-
-# In[33]:
-
+                                # <<<--- 1.Metropolis-Hastings sampler --->>>
 
 def target(lik, prior, n, h, theta):
     if theta < 0 or theta > 1:
@@ -230,7 +114,6 @@ nmcmc = len(samples)//2
 print ("Efficiency = ", naccept/niters)
 
 
-# In[34]:
 
 
 post = st.beta(h+a, n-h+b)
@@ -243,7 +126,6 @@ plt.xlim([0,1]);
 plt.legend(loc='best');
 
 
-# In[35]:
 
 
 def mh_coin(niters, n, h, theta, lik, prior, sigma):
@@ -258,7 +140,6 @@ def mh_coin(niters, n, h, theta, lik, prior, sigma):
     return samples
 
 
-# In[36]:
 
 
 n = 100
@@ -271,9 +152,6 @@ niters = 100
 sampless = [mh_coin(niters, n, h, theta, lik, prior, sigma) for theta in np.arange(0.1, 1, 0.2)]
 
 
-# In[37]:
-
-
 # Convergence of multiple chains
 
 for samples in sampless:
@@ -282,28 +160,9 @@ plt.xlim([0, niters])
 plt.ylim([0, 1]);
 
 
-# In[ ]:
 
 
-#<<<--- 2.GIBBS SAMPLER ---->>>
-
-
-# In[ ]:
-
-
-'''
-Suppose we have a vector of parameters θ=(θ1,θ2,…,θk), and we want to estimate the joint posterior distribution p(θ|X).
-Suppose we can find and draw random samples from all the conditional distributions
-
-p(θ1|θ2,…θk,X)p(θ2|θ1,…θk,X)…p(θk|θ1,θ2,…,X)
-
-With Gibbs sampling, the Markov chain is constructed by sampling from the conditional distribution for each parameter θi in turn, treating all other parameters as observed.
-When we have finished iterating over all parameters, we are said to have completed one cycle of the Gibbs sampler. Where it is difficult to sample from a conditional distribution, 
-we can sample using a Metropolis-Hastings algorithm instead - this is known as Metropolis wihtin Gibbs.
-'''
-
-
-# In[38]:
+                                #<<<--- 2.GIBBS SAMPLER ---->>>
 
 
 #Setup
@@ -312,15 +171,12 @@ def bern(theta, z, N):
     return np.clip(theta**z * (1-theta)**(N-z), 0, 1)
 
 
-# In[39]:
-
 
 def bern2(theta1, theta2, z1, z2, N1, N2):
     """Bernoulli likelihood with N trials and z successes."""
     return bern(theta1, z1, N1) * bern(theta2, z2, N2)
 
 
-# In[40]:
 
 
 def make_thetas(xmin, xmax, n):
@@ -329,8 +185,6 @@ def make_thetas(xmin, xmax, n):
     thetas = xs[:-1]+ widths
     return thetas
 
-
-# In[55]:
 
 
 def make_plots(X, Y, prior, likelihood, posterior, projection=None):
@@ -349,7 +203,6 @@ def make_plots(X, Y, prior, likelihood, posterior, projection=None):
     plt.tight_layout()
 
 
-# In[56]:
 
 
 thetas1 = make_thetas(0, 1, 101)
@@ -357,10 +210,8 @@ thetas2 = make_thetas(0, 1, 101)
 X, Y = np.meshgrid(thetas1, thetas2)
 
 
-# In[57]:
-
-
 #Analytical Solution For GIBBS SAMPLER
+
 a = 2
 b = 3
 
@@ -376,10 +227,10 @@ make_plots(X, Y, prior, likelihood, posterior)
 make_plots(X, Y, prior, likelihood, posterior, projection='3d')
 
 
-# In[59]:
 
 
 #Grid approximation
+
 def c2d(thetas1, thetas2, pdf):
     width1 = thetas1[1] - thetas1[0]
     width2 = thetas2[1] - thetas2[0]
@@ -389,7 +240,6 @@ def c2d(thetas1, thetas2, pdf):
     return pmf
 
 
-# In[60]:
 
 
 _prior = bern2(X, Y, 2, 8, 10, 10) + bern2(X, Y, 8, 2, 10, 10)
@@ -401,10 +251,10 @@ make_plots(X, Y, prior_grid, likelihood, posterior_grid)
 make_plots(X, Y, prior_grid, likelihood, posterior_grid, projection='3d')
 
 
-# In[61]:
 
 
 #Metropolis
+
 a = 2
 b = 3
 
@@ -437,10 +287,9 @@ make_plots(X, Y, prior(X, Y), lik(X, Y), posterior_metroplis)
 make_plots(X, Y, prior(X, Y), lik(X, Y), posterior_metroplis, projection='3d')
 
 
-# In[63]:
-
 
 #Gibbs
+
 a = 2
 b = 3
 
@@ -467,9 +316,6 @@ for i in range(niters):
         thetas[i-burnin] = theta
 
 
-# In[64]:
-
-
 kde = stats.gaussian_kde(thetas.T)
 XY = np.vstack([X.ravel(), Y.ravel()])
 posterior_gibbs = kde(XY).reshape(X.shape)
@@ -477,33 +323,10 @@ make_plots(X, Y, prior(X, Y), lik(X, Y), posterior_gibbs)
 make_plots(X, Y, prior(X, Y), lik(X, Y), posterior_gibbs, projection='3d')
 
 
-# In[ ]:
 
 
-# <<<--- SLICE SAMPLER --->>>
+                                # <<<--- 3.SLICE SAMPLER --->>>
 
-
-# In[ ]:
-
-
-'''
-Yet another MCMC algorithm is slice sampling.
-In slice sampling, the Markov chain is constructed by using an auxiliary variable representing slices throuth the (unnomrmalized) posterior distribution that is constructed using only the current parmater value. 
-Like Gibbs sampling, there is no tuning processs and all proposals are accepted. 
-For slice sampling, you either need the inverse distibution function or some way to estimate it.
-
-A toy example illustrates the process - 
-Suppose we want to draw random samples from the posterior distribution N(0,1) using slice sampling
-
-Start with some value x - sample y from U(0,f(x)) -this is the horizontal “slice” that gives the method its name - sample the next x from f−1(y) - 
-this is typicaly done numerically - repeat
-'''
-
-
-# In[65]:
-
-
-# Code illustrating idea of slice sampler
 
 import scipy.stats as stats
 
@@ -532,61 +355,8 @@ while len(xs) < niters:
 plt.hist(xs, 20);
 
 
-# In[ ]:
-
-
-'''
 #Hierarchical models
 
-Hierarchical models have the following structure - 
-first we specify that the data come from a distribution with parameers θ
-
-X∼f(X | θ)
-and that the parameters themselves come from anohter distribution with hyperparameters λ
-
-θ∼g(θ | λ)
-and finally that λ comes from a prior distribution
-
-λ∼h(λ)
-More levels of hiearchy are possible - i.e you can specify hyper-hyperparameters for the dsitribution of λ and so on.
-
-We now specify the hiearchcical model - 
-note change of notation from the overview above - 
-that θ is λ (parameter) and λ is β (hyperparameter) simply because λ is traditional for the Poisson distribution parameter.
-
-The likelihood f is
-
-∏i=110Poisson(λiti)
-
-We let the prior g for λ be
-
-Gamma(α,β)
-with α=1.8 (an improper prior whose integral does not sum to 1)
-
-and let the hyperprior h for β to be
-
-Gamma(γ,δ)
-with γ=0.01 and δ=1.
-
-There are 11 unknown parameters (10 λs and β) in this hierarchical model.
-
-The posterior is
-
-p(λ,β | y,t)=∏i=110Poisson(λiti)×Gamma(α,β)×Gamma(γ,δ)
-with the condiitonal distributions needed for Gibbs sampling given by
-
-p(λi | λ−i,β,y,t)=Gamma(yi+α,ti+β)
-and
-
-p(β | λ,y,t)=Gamma(10α+γ,δ+∑i=110λi)
-
-'''
-
-
-# In[66]:
-
-
-#Hierarchical models
 from numpy.random import gamma as rgamma # rename so we can use gamma for parameter name
 def lambda_update(alpha, beta, y, t):
     return rgamma(size=len(y), shape=y+alpha, scale=1.0/(t+beta))
@@ -622,7 +392,6 @@ print (lambdas.mean(axis=0))
 print (lambdas.std(ddof=1, axis=0))
 
 
-# In[67]:
 
 
 plt.figure(figsize=(10, 20))
@@ -632,7 +401,6 @@ for i in range(len(lambdas.T)):
     plt.title('Trace for $\lambda$%d' % i)
 
 
-# In[ ]:
 
 
 
