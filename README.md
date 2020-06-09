@@ -20,22 +20,15 @@ MCMC and it's common variants -
     -->> slice sampling Sampler Algorithm
     -->> Hierarchical Method
     
-
+    
 Now MCMC thus can be applied for a variety of optimization problems namely:
+1.	Finding out the best arrangement of a DNA sequence
+2.	Cryptography: Breaking the code
+3.	Heuristic way of Minimizing/Maximizing any function
+4.	Sampling from any distribution
+5.	Industrial Engineering and Operations Research
+6.	Random Graphs and Combinatorial Structures
+7.	Economics and Finance
+8.	Computational Statistics and much more...... !!!!!
 
-1. Finding out the best arrangement of a DNA sequence
-
-2. Crytography: Breaking the code
-
-3. Heuristic way of Minimizing/Maximizing any function
-
-4. Sampling from any distribution
-
-5.Industrial Engineering and Operations Research
-
-6.Random Graphs and Combinatorial Structures
-
-7.Economics and Finance
-
-8.Computational Statistics and much more...... !!!!!
 
