@@ -1,6 +1,6 @@
 # MCMC-Algorithm-Implementation
 
-Markov Chain Monte Carlo(MCMC)-A ML Algo for posterior distribution
+Markov Chain Monte Carlo(MCMC)-A Machine Learning Algorithm for posterior distribution
 
 MCMC methods are used to approximate the posterior distribution of a parameter of interest by random sampling in a probabilistic space.
 
