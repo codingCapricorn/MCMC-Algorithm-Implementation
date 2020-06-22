@@ -15,6 +15,7 @@ The nice thing is that this target distribution only needs to be proportional to
 The repository contains two different concepts ::::::
 
 1.MCMC_ALGORITHM :::::
+
 MCMC and it's common variants -
     
     -->> Bayesian Algorithm
@@ -24,6 +25,7 @@ MCMC and it's common variants -
     -->> Hierarchical Method
     
 2.Simulation_Using_MC :::::
+
 Numercal Simuation variants - 
 
     -->> Binary Tree Simulation
