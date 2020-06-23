@@ -26,14 +26,19 @@ MCMC and it's common variants -
     
 2.Simulation_Using_MC :::::
 
-Numercal Simuation variants - 
+Numerical Simuation variants - 
 
     -->> Binary Tree Simulation
     -->> Black Scholes Simulation
     -->> Monte Carlo Simulation 
     
-
     
+Monte Carlo Method ::::
+
+    -->>For Sampling probability distribution
+    -->>For estimating value of PI
+     
+     
 Now MCMC thus can be applied for a variety of optimization problems namely:
 1.	Finding out the best arrangement of a DNA sequence
 2.	Cryptography: Breaking the code
