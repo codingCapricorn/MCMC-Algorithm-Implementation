@@ -16,7 +16,9 @@ The repository contains two different concepts ::::::
 
     
 1.Monte Carlo Method ::::
-Basic implementation of Omnte Carlo -
+
+Basic implementation of Monte Carlo -
+
     -->>For Sampling probability distribution
     -->>For estimating value of PI
     
