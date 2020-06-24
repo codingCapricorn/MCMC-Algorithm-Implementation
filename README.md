@@ -32,12 +32,6 @@ Numerical Simuation variants -
     -->> Black Scholes Simulation
     -->> Monte Carlo Simulation 
     
-    
-1.Monte Carlo Method ::::
-
-    -->>For Sampling probability distribution
-    -->>For estimating value of PI
-     
      
 Now MCMC thus can be applied for a variety of optimization problems namely:
 1.	Finding out the best arrangement of a DNA sequence
