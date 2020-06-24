@@ -14,7 +14,7 @@ The nice thing is that this target distribution only needs to be proportional to
 
 The repository contains two different concepts ::::::
 
-1.MCMC_ALGORITHM :::::
+3.MCMC_ALGORITHM :::::
 
 MCMC and it's common variants -
     
