@@ -19,7 +19,16 @@ The repository contains two different concepts ::::::
 
     -->>For Sampling probability distribution
     -->>For estimating value of PI
-     
+    
+    
+2.Simulation_Using_MC :::::
+
+Numerical Simuation variants - 
+
+    -->> Binary Tree Simulation
+    -->> Black Scholes Simulation
+    -->> Monte Carlo Simulation 
+    
 
 3.MCMC_ALGORITHM :::::
 
