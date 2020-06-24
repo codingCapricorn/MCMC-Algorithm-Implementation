@@ -33,7 +33,7 @@ Numerical Simuation variants -
     -->> Monte Carlo Simulation 
     
     
-3.Monte Carlo Method ::::
+1.Monte Carlo Method ::::
 
     -->>For Sampling probability distribution
     -->>For estimating value of PI
