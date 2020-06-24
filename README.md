@@ -31,14 +31,7 @@ MCMC and it's common variants -
     -->> slice sampling Sampler Algorithm
     -->> Hierarchical Method
     
-2.Simulation_Using_MC :::::
 
-Numerical Simuation variants - 
-
-    -->> Binary Tree Simulation
-    -->> Black Scholes Simulation
-    -->> Monte Carlo Simulation 
-    
      
 Now MCMC thus can be applied for a variety of optimization problems namely:
 1.	Finding out the best arrangement of a DNA sequence
