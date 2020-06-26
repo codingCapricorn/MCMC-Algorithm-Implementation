@@ -29,8 +29,8 @@ Monte Carlo Implementation On 2D lattice -
 
     -->> With small difference number of steps and iterations 
     -->> With large difference number of steps and iterations 
-    -->>With large number of iterations
-    -->>Steps are smaller than iterations
+    -->> With large number of iterations
+    -->> Steps are smaller than iterations
     
 2.Simulation_Using_MC :::::
 
