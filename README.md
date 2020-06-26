@@ -23,9 +23,9 @@ Basic implementation of Monte Carlo Method -
     -->>For estimating value of PI
     
 
-2.Random_Walk Monte Carlo ::::
+2.Random_Walk_MC ::::
 
-Monte Carlo Implementation On 2D lattice -
+Random Walk Monte Carlo Implementation On 2D lattice -
 
     -->> With small difference number of steps and iterations 
     -->> With large difference number of steps and iterations 
