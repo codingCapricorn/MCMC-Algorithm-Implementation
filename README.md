@@ -19,8 +19,8 @@ The repository contains four different concepts ::::::
 
 Basic implementation of Monte Carlo Method -
 
-    -->>For Sampling probability distribution
-    -->>For estimating value of PI
+    -->> For Sampling probability distribution
+    -->> For estimating value of PI
     
 
 2.Random_Walk_MC ::::
