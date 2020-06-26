@@ -15,15 +15,15 @@ The nice thing is that this target distribution only needs to be proportional to
 The repository contains four different concepts ::::::
 
     
-1.Monte Carlo Method ::::
+1.Monte_Carlo ::::
 
-Basic implementation of Monte Carlo -
+Basic implementation of Monte Carlo Method -
 
     -->>For Sampling probability distribution
     -->>For estimating value of PI
     
 
-2.Random Walk Monte Carlo ::::
+2.Random_Walk Monte Carlo ::::
 
 Monte Carlo Implementation On 2D lattice -
 
