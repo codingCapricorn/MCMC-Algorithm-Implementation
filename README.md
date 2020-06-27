@@ -34,7 +34,7 @@ Random Walk Monte Carlo Implementation On 2D Lattice -
     
 2.Simulation_Using_MC :::::
 
-Numerical Simuation variants - 
+Numerical Simuation Variants - 
 
     -->> Binary Tree Simulation
     -->> Black Scholes Simulation
