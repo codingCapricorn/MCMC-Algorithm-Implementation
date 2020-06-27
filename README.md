@@ -12,7 +12,7 @@ instead we set up acceptance criteria for each draw based on comparing successiv
 
 The nice thing is that this target distribution only needs to be proportional to the posterior distribution, which means we don’t need to evaluate the potentially intractable marginal likelihood, which is just a normalizing constant.
 
-The repository contains four different concepts ::::::
+The repository contains four different modules ::::::
 
     
 1.Monte_Carlo ::::
