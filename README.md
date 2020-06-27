@@ -25,7 +25,7 @@ Basic implementation of Monte Carlo Method -
 
 2.Random_Walk_MC ::::
 
-Random Walk Monte Carlo Implementation On 2D lattice -
+Random Walk Monte Carlo Implementation On 2D Lattice -
 
     -->> With small difference number of steps and iterations 
     -->> With large difference number of steps and iterations 
