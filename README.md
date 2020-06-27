@@ -17,7 +17,7 @@ The repository contains four different modules ::::::
     
 1.Monte_Carlo ::::
 
-Basic implementation of Monte Carlo Method -
+Basic Implementation Of Monte Carlo Method -
 
     -->> For Sampling probability distribution
     -->> For estimating value of PI
