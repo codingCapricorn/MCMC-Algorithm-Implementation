@@ -43,7 +43,7 @@ Numerical Simuation Variants -
 
 3.MCMC_ALGORITHM :::::
 
-MCMC And It's Common variants -
+MCMC And It's Common Variants -
     
     -->> Bayesian Algorithm
     -->> Metropolis-Hastings Sampler Algorithm
