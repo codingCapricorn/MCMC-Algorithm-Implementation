@@ -40,7 +40,9 @@ Numerical Simuation Variants -
     -->> Binary Tree Simulation
     -->> Black Scholes Simulation
     -->> Monte Carlo Simulation 
-    
+
+
+MCMC is an advancement over MONTE CARLO ::::
 
 3.MCMC_ALGORITHM :::::
 
