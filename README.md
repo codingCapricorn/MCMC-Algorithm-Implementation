@@ -44,7 +44,7 @@ Numerical Simuation Variants -
 
 MCMC is an advancement over MONTE CARLO ::::
 
-3.MCMC_ALGORITHM :::::
+4.MCMC_ALGORITHM :::::
 
 MCMC And It's Common Variants -
     
