@@ -56,7 +56,7 @@ MCMC And It's Common Variants -
     -->> slice sampling Sampler Algorithm
     -->> Hierarchical Method
     
-
+#
      
 Now MCMC thus can be applied for a variety of optimization problems namely:
 1.	Finding out the best arrangement of a DNA sequence
