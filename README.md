@@ -70,4 +70,3 @@ Now MCMC thus can be applied for a variety of optimization problems namely:
 7.	Economics and Finance
 8.	Computational Statistics and much more...... !!!!!
 
-
