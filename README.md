@@ -42,7 +42,7 @@ Numerical Simuation Variants -
     -->> Black Scholes Simulation
     -->> Monte Carlo Simulation 
 
-
+#
 MCMC is an advancement over MONTE CARLO ::::
 
 4.MCMC_ALGORITHM :::::
