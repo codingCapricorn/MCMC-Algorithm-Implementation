@@ -25,7 +25,7 @@ Basic Implementation Of Monte Carlo Method -
     -->> For Sampling probability distribution
     -->> For estimating value of PI
     
-
+#
 2.Random_Walk_MC ::::
 Random Walk Monte Carlo Implementation On 2D Lattice -
 
