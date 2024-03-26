@@ -62,7 +62,7 @@ MCMC And It's Common Variants -
 #     
 ##### Now MCMC thus can be applied for a variety of optimization problems namely:
 1.	Finding out the best arrangement of a DNA sequence
-2.	Cryptography: Breaking the code
+2.	Cryptography: Breaking the code.
 3.	Heuristic way of Minimizing/Maximizing any function
 4.	Sampling from any distribution
 5.	Industrial Engineering and Operations Research
