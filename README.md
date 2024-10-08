@@ -8,7 +8,7 @@ With MCMC,i.e.Markov Chain + Monte Carlo Algorithms, we draw samples from a (sim
 
 Under certain condiitons, the Markov chain will have a unique stationary distribution. In addition, not all samples are used -
 
-instead we set up acceptance criteria for each draw based on comparing successive states with respect to a target distribution that enusre that the stationary distribution is the posterior distribution of interest..
+instead we set up acceptance criteria for each draw based on comparing successive states with respect to a target distribution that enusre that the stationary distribution is the posterior distribution of interest.
 
 The nice thing is that this target distribution only needs to be proportional to the posterior distribution, which means we don’t need to evaluate the potentially intractable marginal likelihood, which is just a normalizing constant.
 
