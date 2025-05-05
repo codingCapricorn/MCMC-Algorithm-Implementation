@@ -6,7 +6,7 @@ MCMC methods are used to approximate the posterior distribution of a parameter o
 
 With MCMC,i.e.Markov Chain + Monte Carlo Algorithms, we draw samples from a (simple) proposal distribution so that each draw depends only on the state of the previous draw (i.e. the samples form a Markov chain). 
 
-Under certain condiitons, the Markov chain will have a unique stationary distribution. In addition, not all samples are used -. 
+Under certain condiitons, the Markov chain will have a unique stationary distribution. In addition, not all samples are used - 
 
 instead we set up acceptance criteria for each draw based on comparing successive states with respect to a target distribution that enusre that the stationary distribution is the posterior distribution of interest.
 
