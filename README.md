@@ -4,7 +4,7 @@
 
 MCMC methods are used to approximate the posterior distribution of a parameter of interest by random sampling in a probabilistic space. 
 
-With MCMC,i.e.Markov Chain + Monte Carlo Algorithms, we draw samples from a (simple) proposal distribution so that each draw depends only on the state of the previous draw (i.e. the samples form a Markov chain). 
+With MCMC,i.e.Markov Chain + Monte Carlo Algorithms, we draw samples from a (simple) proposal distribution so that each draw depends only on the state of the previous draw (i.e. the samples form a Markov chain).. 
 
 Under certain condiitons, the Markov chain will have a unique stationary distribution. In addition, not all samples are used - 
 
